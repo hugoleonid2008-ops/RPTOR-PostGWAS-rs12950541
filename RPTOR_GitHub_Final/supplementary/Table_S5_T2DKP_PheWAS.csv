@@ -1,0 +1,79 @@
+Number,Phenotype,Description,Group,Type,P_value,Beta_or_logOR,N,Direction
+1,WEIGHT,Weight,ANTHROPOMETRIC,Quantitative,1.529e-35,-0.0194,1091260,-
+2,BMI,Body mass index (BMI),ANTHROPOMETRIC,Quantitative,6.852e-25,-0.0152,4820740,-
+3,MetS_cont,"Metabolic syndrome derived from gSEM latent factor, continuous as only n_eff is provided",OTHER,Quantitative,2.562e-14,-0.0113,1384350,-
+4,Obesity,Obesity,ANTHROPOMETRIC,Binary,1.838e-08,-0.0235,581702,-
+5,HDL,HDL cholesterol,LIPIDS,Quantitative,1.477e-06,0.0051,3344240,+
+6,T2D,Type 2 diabetes (T2D),GLYCEMIC,Binary,1.782e-06,-0.0173,3860600,-
+7,BMIadjSMK,BMI adj smoking status,ANTHROPOMETRIC,Quantitative,6.683e-06,-0.0205,327532,-
+8,SleepApnea,Sleep apnea syndrome,SLEEP AND CIRCADIAN,Binary,9.376e-06,-0.0192,403006,-
+9,ALT,Alanine transaminase (ALT),HEPATIC,Quantitative,2.054e-05,-0.0014,2123440,-
+10,SleepNaps,Daytime napping,SLEEP AND CIRCADIAN,Quantitative,0.00016,-0.0054,452633,-
+11,HYPERTENSION,Hypertension,CARDIOVASCULAR,Binary,0.0002879,-0.013,1041290,-
+12,BUN,Blood urea nitrogen,RENAL,Quantitative,0.0003972,-0.0015,1199600,-
+13,GCC,GCC retinal layer thickness,OCULAR,Quantitative,0.001136,0.029,38485,+
+14,PC1diet,PC1 dietary pattern,NUTRITIONAL,Quantitative,0.0012,-0.0079,449210,-
+15,GCL,GCL retinal layer thickness,OCULAR,Quantitative,0.00121,0.0278,38485,+
+16,freshfruit,Fresh fruit consumption,NUTRITIONAL,Quantitative,0.0016,-0.0077,447401,-
+17,HF,Heart failure,CARDIOVASCULAR,Binary,0.001654,-0.0175,1103570,-
+18,HIPC,Hip circumference,ANTHROPOMETRIC,Quantitative,0.001683,-0.0162,391031,-
+19,BFP,Body fat percentage,ANTHROPOMETRIC,Quantitative,0.002002,0.0125,331402,+
+20,SBP,Systolic blood pressure,CARDIOVASCULAR,Quantitative,0.002058,-0.0037,3718260,-
+21,BIGTT-AIR,BIGTT acute insulin response,GLYCEMIC,Quantitative,0.004724,-0.0299,25559,-
+22,HEIGHT,Height,ANTHROPOMETRIC,Quantitative,0.004817,-0.0028,2336190,-
+23,BS,Random glucose,GLYCEMIC,Quantitative,0.005058,-0.0034,2444110,-
+24,AM_broad_heavy,Broad vs. Heavy alcohol consumption,NUTRITIONAL,Binary,0.00534,-0.0223,180056,-
+25,CRP,Plasma C-reactive protein,CARDIOVASCULAR,Quantitative,0.005777,-0.0047,1387120,-
+26,T2DwNM,Type 2 diabetes with neurological manifestations,GLYCEMIC,Binary,0.006177,-0.022739487,288946,-
+27,ObstructiveApnea,Obstructive sleep apnea (PheCode 327.32),SLEEP AND CIRCADIAN,Binary,0.006926,-0.015873348,516842,-
+28,PulsePress,Pulse pressure,CARDIOVASCULAR,Quantitative,0.00728,-0.0043,2144080,-
+29,AfibFlutter,Atrial fibrillation or flutter,ATRIAL FIBRILLATION,Binary,0.007379,-0.0157,427811,-
+30,AST,Aspartate aminotransferase (AST),HEPATIC,Quantitative,0.007887,-0.0011,1657360,-
+31,SCOOPvSTILTS,Obese vs thin,ANTHROPOMETRIC,Binary,0.008115,-0.1757,2926,-
+32,MicroInT2D,Microalbuminuria in type 2 diabetes (T2D),DIABETIC COMPLICATIONS,Binary,0.01113,-0.0586,5146,-
+33,SystolicHeartFail,Heart failure with reduced EF [Systolic or combined heart failure] (PheCode 428.3),CARDIOVASCULAR,Binary,0.01342,-0.025667747,160768,-
+34,EaseOfWakingUp,Ease of waking up,SLEEP AND CIRCADIAN,Quantitative,0.01376,-0.0045,836540,-
+35,MeanSleepDiurnalInactRN,"Diurnal inactivity duration, rank-normalized",SLEEP AND CIRCADIAN,Quantitative,0.014,-0.0136,85502,-
+36,ProteinIntake,Dietary protein intake,NUTRITIONAL,Quantitative,0.01421,-0.0091,191157,-
+37,HR,Heart rate,CARDIOVASCULAR,Quantitative,0.01425,-0.0041,1093670,-
+38,niHF,Non-ischemic heart failure,CARDIOVASCULAR,Binary,0.01536,-0.022590695,159838,-
+39,DiabeticRetino,Diabetic retinopathy,DIABETIC COMPLICATIONS,Binary,0.01586,-0.0252,182450,-
+40,LEPadjBMI,Leptin adj BMI,LIPIDS,Quantitative,0.01745,-0.0184,29468,-
+41,AST_ALT_ratio,AST-ALT ratio,HEPATIC,Quantitative,0.02079,-0.0065,354455,-
+42,SleepEDS,Excessive daytime sleepiness,SLEEP AND CIRCADIAN,Binary,0.02082,-0.0029,470472,-
+43,Hyperaldosteronism,Hyperaldosteronism,GLYCEMIC,Binary,0.02163,0.12624373,5538,+
+44,SleepShort,Short sleep duration,SLEEP AND CIRCADIAN,Binary,0.022,0.0026,315267,+
+45,Sodium,Sodium,METABOLITE,Quantitative,0.02225,0.0047,876751,+
+46,VaricoseVeins,Varicose veins,CARDIOVASCULAR,Binary,0.02274,-0.0204,165034,-
+47,MA,Microalbuminuria,RENAL,Binary,0.02293,-0.018,175559,-
+48,VATadjBMIHeight,VAT adjusted for BMI and height,ANTHROPOMETRIC,Quantitative,0.023,0.0186513,38960,+
+49,WCadjBMISMK,Waist circumference adj BMI-smoking status,ANTHROPOMETRIC,Quantitative,0.02332,-0.0109,282089,-
+50,PACG,Primary angle-closure glaucoma,OCULAR,Binary,0.02373,0.043429557,40553,+
+51,WAIST,Waist circumference,ANTHROPOMETRIC,Quantitative,0.02446,-0.0085,951477,-
+52,AF,Atrial fibrillation,ATRIAL FIBRILLATION,Binary,0.02659,-0.0119,804536,-
+53,DiastolicHeartFail,Heart failure with preserved EF [Diastolic heart failure] (PheCode 428.4),CARDIOVASCULAR,Binary,0.02789,-0.027615167,101929,-
+54,fLVSV,Forward left ventricular stroke volume,CARDIOVASCULAR,Quantitative,0.02871,-0.0195,35287,-
+55,cIMTmax,Maximum carotid intima-media thickness,CARDIOVASCULAR,Quantitative,0.03,0.0241,22179,+
+56,ApoA,Serum ApoA,LIPIDS,Quantitative,0.03076,0.0047,398828,+
+57,n6FA182,Linoleic acid,LIPIDS,Quantitative,0.03197,0.1651,491,+
+58,netLVSV,Net left ventricular stroke volume,CARDIOVASCULAR,Quantitative,0.03286,-0.019,35287,-
+59,AHIinREM,Apnea-Hypopnea Index (AHI) in REM sleep,SLEEP AND CIRCADIAN,Quantitative,0.03317,-0.0422,17072,-
+60,VenousThromboembolism,Venous Thromboembolism,CARDIOVASCULAR,Binary,0.03621,-0.0177,168116,-
+61,eGFRcreaCKDi25,"eGFRcreat decline, CKDi25 definition",RENAL,Binary,0.03654,-0.032626502,71485,-
+62,WHR,Waist-hip ratio,ANTHROPOMETRIC,Quantitative,0.03732,-0.0051,2136820,-
+63,BMI2yrs,Body mass index (BMI) at 2 years,ANTHROPOMETRIC,Quantitative,0.03734,-0.0497,4631,-
+64,ESRDvMacroinT2D,End-stage renal disease (ESRD) vs. macroalbuminuria in type 2 diabetes (T2D),RENAL,Binary,0.03759,0.2238,358,+
+65,T2DwOM,Type 2 diabetes with ophthalmic manifestations,GLYCEMIC,Binary,0.03761,-0.023716526,169115,-
+66,MAP,Mean arterial pressure,CARDIOVASCULAR,Quantitative,0.03782,-0.0079,283081,-
+67,PAStraincm,Short-axis pulmonary artery strain (cm),CARDIOVASCULAR,Quantitative,0.038,0.0197,41135,+
+68,PancreasFat,Pancreas fat,GLYCEMIC,Quantitative,0.038,0.0206,25617,+
+69,ISI,Matsuda insulin sensitivity index (ISI),GLYCEMIC,Quantitative,0.04027,0.053,4769,+
+70,DCD_INC,distal conduction disease (inclusive_,CARDIOVASCULAR,Binary,0.04068,-0.019,112472,-
+71,EssentialHYPERTENSION,Essential hypertension (PheCode 401.1),CARDIOVASCULAR,Binary,0.04164,-0.016857117,459952,-
+72,BSandFG,Random and fasting glucose,GLYCEMIC,Quantitative,0.04253,-0.0028,457655,-
+73,Insulin_120_min_glipizide,Log of insulin at 120 min at V1,SULFONYLUREA RESPONSE,Quantitative,0.0427081,-0.125696,627,-
+74,IPL,IPL retinal layer thickness,OCULAR,Quantitative,0.04298,0.0173,38485,+
+75,eGFRcreaNoDiabetes,eGFRcreat in individuals without diabetes,RENAL,Quantitative,0.043,-0.003155439935031975,1262720,-
+76,AlbInT2D,Albuminuria in type 2 diabetes,DIABETIC COMPLICATIONS,Binary,0.04395,-0.0449,6217,-
+77,RNFL,RNFL retinal layer thickness,OCULAR,Quantitative,0.04729,0.0153,69919,+
+78,Glucose_30_min_OGTT_metformin_adjusted_baseline_glucose,Glucose at 30 min at V2,METFORMIN RESPONSE,Quantitative,0.0493365,0.0971985,789,+

@@ -1,0 +1,32 @@
+Number,Trait,First_Author,Year,P_value,Beta,Sample_Size,L2G_RPTOR_Score,L2G_Rank2_Gene,L2G_Rank2_Score,Study_ID,Fine_Mapping_Method,Notes
+1,Type 2 diabetes,Suzuki K,2024,5e-14,,2535601,0.391,,,"GCST90492734",PICS,
+2,Type 2 diabetes,Vujkovic M,2020,5e-9,-0.031,1407282,0.471,,,"GCST010557",PICS,
+3,Body mass index,Harris BHL,2024,3e-17,-0.020,,0.433,,,"GCST90428119",PICS,
+4,Body mass index,Hu S,2025,1.9e-16,-0.101,342893,0.445,,,"GCST90310150",PICS,
+5,Body fat percentage,Martin S,2021,2e-15,-0.013,442278,0.450,,,"GCST90020232",PICS,
+6,Metabolic biomarkers,Martin S,2021,9e-10,,389354,0.503,,,"GCST90038594",PICS,
+7,Whole body fat mass,Harris BHL,2024,7e-16,-0.020,337196,0.415,,,"GCST90428121",PICS,
+8,Weight,Hu S,2025,5.2e-17,-0.306,343019,0.425,,,"GCST90310189",PICS,
+9,Childhood BMI,Hawkes G,2023,2e-13,-0.016,441761,0.430,,,"GCST90240384",PICS,
+10,Body fat percentage,Hu S,2025,2.9e-10,-0.103,337781,0.453,,,"GCST90429576",PICS,
+11,Waist circumference,,,,,,,,,PICS,Data available in Open Targets Platform v24.12
+12,Hip circumference,,,,,,,,,PICS,Data available in Open Targets Platform v24.12
+13,Trunk fat percentage,,,,,,,,,PICS,Data available in Open Targets Platform v24.12
+14,Arm fat percentage,,,,,,,,,PICS,Data available in Open Targets Platform v24.12
+15,Leg fat percentage,,,,,,,,,PICS,Data available in Open Targets Platform v24.12
+16,Whole body water mass,,,,,,,,,PICS,Data available in Open Targets Platform v24.12
+17,Impedance of whole body,,,,,,,,,PICS,Data available in Open Targets Platform v24.12
+18,Basal metabolic rate,,,,,,,,,PICS,Data available in Open Targets Platform v24.12
+19,Standing height,,,,,,,,,PICS,Data available in Open Targets Platform v24.12
+20,Lean body mass,,,,,,,,,PICS,Data available in Open Targets Platform v24.12
+21,Adiposity,,,,,,,,,PICS,Data available in Open Targets Platform v24.12
+22,Fat mass ratio,,,,,,,,,PICS,Data available in Open Targets Platform v24.12
+23,Resting heart rate,,,,,,,,,PICS,Data available in Open Targets Platform v24.12
+24,Systolic blood pressure,,,,,,,,,PICS,Data available in Open Targets Platform v24.12
+25,Diastolic blood pressure,,,,,,,,,PICS,Data available in Open Targets Platform v24.12
+26,Fasting glucose,,,,,,,,,PICS,Data available in Open Targets Platform v24.12
+27,HbA1c levels,,,,,,,,,PICS,Data available in Open Targets Platform v24.12
+28,Triglycerides,,,,,,,,,PICS,Data available in Open Targets Platform v24.12
+29,LDL cholesterol,,,,,,,,,PICS,Data available in Open Targets Platform v24.12
+30,HDL cholesterol,,,,,,,,,PICS,Data available in Open Targets Platform v24.12
+31,Total cholesterol,,,,,,,,,PICS,Data available in Open Targets Platform v24.12

@@ -1,0 +1,13 @@
+Name,Transcript_ID,Length_bp,Protein,Biotype,CCDS
+RPTOR-201,ENST00000306801.8,6838,1335 aa,Protein coding,CCDS11773
+RPTOR-202,ENST00000544334.6,5734,1177 aa,Protein coding,CCDS54175
+RPTOR-203,ENST00000570891.5,2286,379 aa,Protein coding,—
+RPTOR-210,ENST00000576366.1,787,235 aa,Protein coding,—
+RPTOR-208,ENST00000574767.5,2461,95 aa,Nonsense mediated decay,—
+RPTOR-209,ENST00000575542.5,5536,No protein,Processed transcript,—
+RPTOR-211,ENST00000577161.5,3633,No protein,Processed transcript,—
+RPTOR-206,ENST00000573746.1,688,No protein,Processed transcript,—
+RPTOR-205,ENST00000573163.1,501,No protein,Processed transcript,—
+RPTOR-204,ENST00000572733.1,424,No protein,Processed transcript,—
+RPTOR-212,ENST00000649732.1,2499,No protein,Retained intron,—
+RPTOR-207,ENST00000573837.1,443,No protein,Retained intron,—

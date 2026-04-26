@@ -1,0 +1,15 @@
+{
+  credibleSets(variantId: "17_80760693_G_A") {
+    studyLocusId
+    study {
+      studyId
+      traitFromSource
+      studyType
+    }
+    colocalisation {
+      otherStudyLocusId
+      h4
+      colocalisationMethod
+    }
+  }
+}

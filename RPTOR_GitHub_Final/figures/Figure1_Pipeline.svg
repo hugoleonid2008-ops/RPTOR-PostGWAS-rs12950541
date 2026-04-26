@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1200" width="800" height="1200">
+    <!-- Define styles -->
+    <defs>
+        <style>
+            .title { font-family: Arial, sans-serif; font-size: 18px; font-weight: bold; fill: #2c3e50; text-anchor: middle; }
+            .subtitle { font-family: Arial, sans-serif; font-size: 12px; fill: #7f8c8d; text-anchor: middle; }
+            .level-label { font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; fill: #2c3e50; letter-spacing: 1px; }
+            .box-title { font-family: Arial, sans-serif; font-size: 13px; font-weight: 600; fill: #2c3e50; }
+            .box-content { font-family: Arial, sans-serif; font-size: 11px; fill: #2c3e50; }
+            .small-text { font-family: Arial, sans-serif; font-size: 10px; fill: #2c3e50; }
+
+            .db-box { fill: #ecf5fb; stroke: #3498db; stroke-width: 2; }
+            .finding-box { fill: #eefcf5; stroke: #2ecc71; stroke-width: 2; }
+            .novel-box { fill: #fef9e7; stroke: #f39c12; stroke-width: 2; }
+            .io-box { fill: #f4f6f7; stroke: #95a5a6; stroke-width: 2; }
+
+            .arrow { stroke: #95a5a6; stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
+            .arrow-text { font-family: Arial, sans-serif; font-size: 16px; fill: #95a5a6; text-anchor: middle; }
+        </style>
+
+        <!-- Arrow marker -->
+        <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+            <polygon points="0 0, 10 3, 0 6" fill="#95a5a6" />
+        </marker>
+    </defs>
+
+    <!-- White background -->
+    <rect width="800" height="1200" fill="white"/>
+
+    <!-- Title -->
+    <text x="400" y="35" class="title">Figure 1. Integrative Post-GWAS Annotation Pipeline</text>
+    <text x="400" y="55" class="subtitle">rs12950541 at the RPTOR Locus for Type 2 Diabetes</text>
+
+    <!-- LEVEL 1: INPUT -->
+    <text x="50" y="90" class="level-label">LEVEL 1: GWAS VARIANT</text>
+    <line x1="50" y1="100" x2="750" y2="100" stroke="#ecf0f1" stroke-width="1"/>
+
+    <!-- Input box -->
+    <rect x="225" y="115" width="350" height="60" rx="6" class="io-box"/>
+    <text x="240" y="135" class="box-title">rs12950541</text>
+    <text x="240" y="153" class="small-text">chr17:80760693 (RPTOR intron) | Discovery P = 2.41×10⁻⁸ | T2D risk allele</text>
+
+    <!-- Arrow down -->
+    <path d="M 400 175 L 400 205" class="arrow"/>
+    <text x="420" y="195" class="arrow-text">↓</text>
+
+    <!-- LEVEL 2: PRIMARY ANALYSES -->
+    <text x="50" y="240" class="level-label">LEVEL 2: PRIMARY DATA SOURCES</text>
+    <line x1="50" y1="250" x2="750" y2="250" stroke="#ecf0f1" stroke-width="1"/>
+
+    <!-- Database boxes (2x2 grid) -->
+    <!-- Box 1: Open Targets -->
+    <rect x="50" y="270" width="325" height="80" rx="6" class="db-box"/>
+    <text x="65" y="290" class="box-title">Open Targets v24.12</text>
+    <text x="65" y="310" class="small-text">31 GWAS credible sets</text>
+    <text x="65" y="325" class="small-text">16 QTL • 48 colocalizations</text>
+
+    <!-- Box 2: Ensembl VEP -->
+    <rect x="425" y="270" width="325" height="80" rx="6" class="db-box"/>
+    <text x="440" y="290" class="box-title">Ensembl VEP Release 105</text>
+    <text x="440" y="310" class="small-text">140 LD partners</text>
+    <text x="440" y="325" class="small-text">906 annotations • 100% MODIFIER</text>
+
+    <!-- Box 3: RNAct/catRAPID -->
+    <rect x="50" y="370" width="325" height="80" rx="6" class="db-box"/>
+    <text x="65" y="390" class="box-title">RNAct/catRAPID</text>
+    <text x="65" y="410" class="small-text">200 RNA-protein interactions</text>
+    <text x="65" y="425" class="small-text">2 RPTOR transcripts analyzed</text>
+
+    <!-- Box 4: T2D Knowledge Portal -->
+    <rect x="425" y="370" width="325" height="80" rx="6" class="db-box"/>
+    <text x="440" y="390" class="box-title">T2D Knowledge Portal</text>
+    <text x="440" y="410" class="small-text">703 PheWAS • TF motifs</text>
+    <text x="440" y="425" class="small-text">Regional analysis</text>
+
+    <!-- Arrow down -->
+    <path d="M 400 460 L 400 490" class="arrow"/>
+    <text x="420" y="480" class="arrow-text">↓</text>
+
+    <!-- LEVEL 3: KEY FINDINGS -->
+    <text x="50" y="525" class="level-label">LEVEL 3: INTEGRATED FINDINGS</text>
+    <line x1="50" y1="535" x2="750" y2="535" stroke="#ecf0f1" stroke-width="1"/>
+
+    <!-- Finding boxes (2x2 grid) -->
+    <!-- Box 1: Locus-to-Gene -->
+    <rect x="50" y="555" width="325" height="100" rx="6" class="finding-box"/>
+    <text x="65" y="575" class="box-title">Locus-to-Gene Mapping</text>
+    <text x="65" y="595" class="small-text">L2G Score: RPTOR #1 (0.428)</text>
+    <text x="65" y="610" class="small-text">eQTL gap: Zero in islets/adipose/liver</text>
+    <text x="65" y="625" class="small-text">sQTL muscle: P = 1.21×10⁻¹⁶</text>
+
+    <!-- Box 2: Regulatory Elements -->
+    <rect x="425" y="555" width="325" height="100" rx="6" class="finding-box"/>
+    <text x="440" y="575" class="box-title">Regulatory Elements</text>
+    <text x="440" y="595" class="small-text">TF binding: ATF4/CEBP/GCM1</text>
+    <text x="440" y="610" class="small-text">24 regulatory region variants</text>
+    <text x="440" y="625" class="small-text">Intronic enhancer region</text>
+
+    <!-- Box 3: RNA-Protein Links (Novel) -->
+    <rect x="50" y="675" width="325" height="100" rx="6" class="novel-box"/>
+    <text x="65" y="695" class="box-title">RNA-Protein Links</text>
+    <text x="65" y="715" class="small-text">RPTOR-208 → ABCC8/ABCC9 targets</text>
+    <text x="65" y="730" class="small-text">SWI/SNF enrichment: P = 3.67×10⁻⁹</text>
+    <text x="65" y="745" class="small-text">Chromatin remodeling pathway</text>
+
+    <!-- Box 4: Phenotype Associations -->
+    <rect x="425" y="675" width="325" height="100" rx="6" class="finding-box"/>
+    <text x="440" y="695" class="box-title">Phenotype Associations</text>
+    <text x="440" y="715" class="small-text">78 significant PheWAS hits</text>
+    <text x="440" y="730" class="small-text">TF ChIP: p300↑(+3.32), CTCF↓(-0.89)</text>
+    <text x="440" y="745" class="small-text">β-cell: BIGTT-AIR ↓ (P = 0.005)</text>
+
+    <!-- Arrow down -->
+    <path d="M 400 795 L 400 825" class="arrow"/>
+    <text x="420" y="815" class="arrow-text">↓</text>
+
+    <!-- LEVEL 4: TRANSLATIONAL VALIDATION -->
+    <text x="50" y="860" class="level-label">LEVEL 4: TRANSLATIONAL EVIDENCE</text>
+    <line x1="50" y1="870" x2="750" y2="870" stroke="#ecf0f1" stroke-width="1"/>
+
+    <!-- Translational boxes (2x2 grid) -->
+    <!-- Box 1: ChEMBL -->
+    <rect x="50" y="890" width="325" height="90" rx="6" class="db-box"/>
+    <text x="65" y="910" class="box-title">ChEMBL</text>
+    <text x="65" y="930" class="small-text">ABCC8 = CHEMBL2071</text>
+    <text x="65" y="945" class="small-text">Sulfonylurea receptor target</text>
+    <text x="65" y="960" class="small-text">FDA-approved drug class</text>
+
+    <!-- Box 2: PubMed (Novel) -->
+    <rect x="425" y="890" width="325" height="90" rx="6" class="novel-box"/>
+    <text x="440" y="910" class="box-title">PubMed (First Evidence)</text>
+    <text x="440" y="930" class="small-text">RPTOR-ABCC8: NOVEL connection</text>
+    <text x="440" y="945" class="small-text">0 publications linking these genes</text>
+    <text x="440" y="960" class="small-text">Untapped therapeutic insight</text>
+
+    <!-- Box 3: ClinicalTrials.gov -->
+    <rect x="50" y="1000" width="325" height="90" rx="6" class="db-box"/>
+    <text x="65" y="1020" class="box-title">ClinicalTrials.gov</text>
+    <text x="65" y="1040" class="small-text">mTOR + sulfonylurea:</text>
+    <text x="65" y="1055" class="small-text">0 combination trials</text>
+    <text x="65" y="1070" class="small-text">Opportunity for new studies</text>
+
+    <!-- Box 4: Literature -->
+    <rect x="425" y="1000" width="325" height="90" rx="6" class="finding-box"/>
+    <text x="440" y="1020" class="box-title">Literature Evidence</text>
+    <text x="440" y="1040" class="small-text">KATP → Ca²⁺ → mTOR axis</text>
+    <text x="440" y="1055" class="small-text">Mechanistic support</text>
+    <text x="440" y="1070" class="small-text">[Kwon et al. and others]</text>
+
+    <!-- Arrow down -->
+    <path d="M 400 1100 L 400 1130" class="arrow"/>
+    <text x="420" y="1120" class="arrow-text">↓</text>
+
+    <!-- LEVEL 5: CONCLUSION -->
+    <rect x="150" y="1145" width="500" height="35" rx="6" class="io-box"/>
+    <text x="400" y="1167" class="box-title" text-anchor="middle">Seven convergent lines of evidence support rs12950541 as regulatory variant at RPTOR for T2D</text>
+
+    <!-- Legend -->
+    <g id="legend">
+        <line x1="50" y1="1185" x2="750" y2="1185" stroke="#ecf0f1" stroke-width="1"/>
+
+        <!-- Legend title -->
+        <text x="50" y="1205" class="level-label">COLOR KEY:</text>
+
+        <!-- Legend items -->
+        <rect x="50" y="1215" width="12" height="12" class="db-box"/>
+        <text x="68" y="1224" class="small-text">Database/Resource</text>
+
+        <rect x="250" y="1215" width="12" height="12" class="finding-box"/>
+        <text x="268" y="1224" class="small-text">Key Finding</text>
+
+        <rect x="450" y="1215" width="12" height="12" class="novel-box"/>
+        <text x="468" y="1224" class="small-text">Novel Finding</text>
+
+        <rect x="650" y="1215" width="12" height="12" class="io-box"/>
+        <text x="668" y="1224" class="small-text">Input/Output</text>
+    </g>
+</svg>

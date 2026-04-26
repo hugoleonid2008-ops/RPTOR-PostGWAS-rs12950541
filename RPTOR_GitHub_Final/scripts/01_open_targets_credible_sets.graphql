@@ -1,0 +1,21 @@
+{
+  credibleSets(variantId: "17_80760693_G_A") {
+    studyLocusId
+    study {
+      studyId
+      traitFromSource
+      publicationFirstAuthor
+      publicationDate
+      nSamples
+      studyType
+    }
+    pValueMantissa
+    pValueExponent
+    beta
+    locus2GeneTable {
+      geneId
+      geneName
+      score
+    }
+  }
+}

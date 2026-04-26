@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RPTOR Post-GWAS Pipeline Figure</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #7f8c8d;
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+
+        .pipeline {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            position: relative;
+        }
+
+        .level {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .level-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: #2c3e50;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #ecf0f1;
+        }
+
+        .boxes-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .box {
+            border-radius: 6px;
+            padding: 15px;
+            border-left: 4px solid;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            flex: 0 1 calc(50% - 8px);
+            min-width: 200px;
+        }
+
+        .box:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .box-title {
+            font-weight: 600;
+            font-size: 13px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .box-content {
+            font-size: 12px;
+            line-height: 1.5;
+            opacity: 0.9;
+        }
+
+        /* Color coding */
+        .database {
+            background: rgba(52, 152, 219, 0.08);
+            border-left-color: #3498db;
+            color: #2c3e50;
+        }
+
+        .database:hover {
+            background: rgba(52, 152, 219, 0.15);
+        }
+
+        .finding {
+            background: rgba(46, 204, 113, 0.08);
+            border-left-color: #2ecc71;
+            color: #2c3e50;
+        }
+
+        .finding:hover {
+            background: rgba(46, 204, 113, 0.15);
+        }
+
+        .novel {
+            background: rgba(241, 196, 15, 0.08);
+            border-left-color: #f39c12;
+            color: #2c3e50;
+        }
+
+        .novel:hover {
+            background: rgba(241, 196, 15, 0.15);
+        }
+
+        .input-output {
+            background: rgba(149, 165, 166, 0.08);
+            border-left-color: #95a5a6;
+            color: #2c3e50;
+        }
+
+        .input-output:hover {
+            background: rgba(149, 165, 166, 0.15);
+        }
+
+        .icon {
+            display: inline-block;
+            width: 18px;
+            height: 18px;
+            background: currentColor;
+            border-radius: 3px;
+            opacity: 0.6;
+        }
+
+        .arrow {
+            text-align: center;
+            color: #95a5a6;
+            font-size: 20px;
+            margin: 10px 0;
+        }
+
+        .level-input {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .level-input .box {
+            display: inline-block;
+            flex: none;
+            width: 100%;
+            max-width: 350px;
+        }
+
+        .level-conclusion {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .level-conclusion .box {
+            display: inline-block;
+            flex: none;
+            width: 100%;
+            max-width: 500px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .tooltip {
+            position: absolute;
+            background: #2c3e50;
+            color: white;
+            padding: 10px 12px;
+            border-radius: 4px;
+            font-size: 11px;
+            white-space: nowrap;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.2s ease;
+            z-index: 1000;
+            bottom: 105%;
+            left: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .tooltip::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 6px solid transparent;
+            border-top-color: #2c3e50;
+        }
+
+        .box:hover .tooltip {
+            opacity: 1;
+        }
+
+        .legend {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 2px solid #ecf0f1;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 12px;
+            color: #2c3e50;
+        }
+
+        .legend-box {
+            width: 20px;
+            height: 20px;
+            border-radius: 3px;
+            border-left: 4px solid;
+        }
+
+        .legend-box.database {
+            background: rgba(52, 152, 219, 0.2);
+            border-left-color: #3498db;
+        }
+
+        .legend-box.finding {
+            background: rgba(46, 204, 113, 0.2);
+            border-left-color: #2ecc71;
+        }
+
+        .legend-box.novel {
+            background: rgba(241, 196, 15, 0.2);
+            border-left-color: #f39c12;
+        }
+
+        .legend-box.input-output {
+            background: rgba(149, 165, 166, 0.2);
+            border-left-color: #95a5a6;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 18px;
+            }
+
+            .box {
+                flex: 0 1 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Figure 1. Integrative Post-GWAS Annotation Pipeline for rs12950541 at the RPTOR Locus</h1>
+        <p class="subtitle">A comprehensive workflow integrating multiple databases and analytical approaches to characterize the candidate regulatory variant</p>
+
+        <div class="pipeline">
+            <!-- Level 1: Input -->
+            <div class="level level-input">
+                <div class="level-title">Level 1: GWAS Variant</div>
+                <div class="box input-output">
+                    <div class="box-title">
+                        <span class="icon"></span>rs12950541
+                    </div>
+                    <div class="box-content">
+                        chr17:80760693 (RPTOR intron) | Discovery P = 2.41×10⁻⁸ | T2D risk allele
+                    </div>
+                    <div class="tooltip">Lead variant from GWAS meta-analysis identifying the RPTOR locus</div>
+                </div>
+            </div>
+
+            <div class="arrow">↓</div>
+
+            <!-- Level 2: Primary Analyses -->
+            <div class="level">
+                <div class="level-title">Level 2: Primary Data Sources</div>
+                <div class="boxes-container">
+                    <div class="box database">
+                        <div class="box-title">
+                            <span class="icon"></span>Open Targets v24.12
+                        </div>
+                        <div class="box-content">
+                            31 GWAS credible sets • 16 QTL • 48 colocalizations
+                        </div>
+                        <div class="tooltip">Systematic variant-to-gene mapping</div>
+                    </div>
+
+                    <div class="box database">
+                        <div class="box-title">
+                            <span class="icon"></span>Ensembl VEP Release 105
+                        </div>
+                        <div class="box-content">
+                            140 LD partners • 906 annotations • 100% MODIFIER
+                        </div>
+                        <div class="tooltip">Sequence consequence and regulatory prediction</div>
+                    </div>
+
+                    <div class="box database">
+                        <div class="box-title">
+                            <span class="icon"></span>RNAct/catRAPID
+                        </div>
+                        <div class="box-content">
+                            200 RNA-protein interactions • 2 RPTOR transcripts
+                        </div>
+                        <div class="tooltip">Protein-RNA binding interaction screening</div>
+                    </div>
+
+                    <div class="box database">
+                        <div class="box-title">
+                            <span class="icon"></span>T2D Knowledge Portal
+                        </div>
+                        <div class="box-content">
+                            703 PheWAS • TF motifs • Regional analysis
+                        </div>
+                        <div class="tooltip">Phenotype associations and transcription factor binding</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="arrow">↓</div>
+
+            <!-- Level 3: Key Findings -->
+            <div class="level">
+                <div class="level-title">Level 3: Integrated Findings</div>
+                <div class="boxes-container">
+                    <div class="box finding">
+                        <div class="box-title">
+                            <span class="icon"></span>Locus-to-Gene
+                        </div>
+                        <div class="box-content">
+                            L2G Score: RPTOR #1 (0.428)<br/>
+                            eQTL gap: Zero QTL in islets/adipose/liver<br/>
+                            sQTL muscle: P = 1.21×10⁻¹⁶
+                        </div>
+                        <div class="tooltip">RPTOR is the strongest candidate gene at this locus</div>
+                    </div>
+
+                    <div class="box finding">
+                        <div class="box-title">
+                            <span class="icon"></span>Regulatory Elements
+                        </div>
+                        <div class="box-content">
+                            TF binding: ATF4/CEBP/GCM1<br/>
+                            24 regulatory region variants<br/>
+                            Intronic enhancer region
+                        </div>
+                        <div class="tooltip">Variant affects multiple transcription factor binding sites</div>
+                    </div>
+
+                    <div class="box novel">
+                        <div class="box-title">
+                            <span class="icon"></span>RNA-Protein Links
+                        </div>
+                        <div class="box-content">
+                            RPTOR-208 → ABCC8/ABCC9 targets<br/>
+                            SWI/SNF enrichment: P = 3.67×10⁻⁹<br/>
+                            Chromatin remodeling pathway
+                        </div>
+                        <div class="tooltip">Novel connection to sulfonylurea target genes</div>
+                    </div>
+
+                    <div class="box finding">
+                        <div class="box-title">
+                            <span class="icon"></span>Phenotype Associations
+                        </div>
+                        <div class="box-content">
+                            78 significant PheWAS hits<br/>
+                            TF ChIP-seq: p300↑(+3.32), CTCF↓(-0.89)<br/>
+                            β-cell function: BIGTT-AIR ↓ (P = 0.005)
+                        </div>
+                        <div class="tooltip">Pleiotropy across metabolic traits</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="arrow">↓</div>
+
+            <!-- Level 4: Translational Validation -->
+            <div class="level">
+                <div class="level-title">Level 4: Translational Evidence</div>
+                <div class="boxes-container">
+                    <div class="box database">
+                        <div class="box-title">
+                            <span class="icon"></span>ChEMBL
+                        </div>
+                        <div class="box-content">
+                            ABCC8 = CHEMBL2071<br/>
+                            Sulfonylurea receptor target<br/>
+                            FDA-approved drug class
+                        </div>
+                        <div class="tooltip">Target is a known T2D therapeutic</div>
+                    </div>
+
+                    <div class="box novel">
+                        <div class="box-title">
+                            <span class="icon"></span>PubMed
+                        </div>
+                        <div class="box-content">
+                            RPTOR-ABCC8 connection: NOVEL<br/>
+                            0 publications linking these genes<br/>
+                            Represents untapped therapeutic insight
+                        </div>
+                        <div class="tooltip">First evidence for this pathway link</div>
+                    </div>
+
+                    <div class="box database">
+                        <div class="box-title">
+                            <span class="icon"></span>ClinicalTrials.gov
+                        </div>
+                        <div class="box-content">
+                            mTOR + sulfonylurea: 0 combination trials<br/>
+                            Opportunity for drug combination studies
+                        </div>
+                        <div class="tooltip">No clinical validation of this pathway yet</div>
+                    </div>
+
+                    <div class="box finding">
+                        <div class="box-title">
+                            <span class="icon"></span>Literature Evidence
+                        </div>
+                        <div class="box-content">
+                            KATP → Ca²⁺ → mTOR axis confirmed<br/>
+                            [Kwon et al. and others]<br/>
+                            Mechanistic support for pathway
+                        </div>
+                        <div class="tooltip">Biological pathway is well-established</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="arrow">↓</div>
+
+            <!-- Level 5: Conclusion -->
+            <div class="level level-conclusion">
+                <div class="level-title">Level 5: Conclusion</div>
+                <div class="box input-output">
+                    <div class="box-title">
+                        <span class="icon"></span>Integrated Evidence
+                    </div>
+                    <div class="box-content">
+                        Seven convergent lines of evidence support rs12950541 as a candidate regulatory variant at RPTOR for type 2 diabetes risk through modulation of KATP-dependent β-cell function
+                    </div>
+                    <div class="tooltip">Comprehensive evidence synthesis</div>
+                </div>
+            </div>
+
+            <!-- Legend -->
+            <div class="legend">
+                <div class="legend-item">
+                    <div class="legend-box database"></div>
+                    <span>Database/Resource</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-box finding"></div>
+                    <span>Key Finding</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-box novel"></div>
+                    <span>Novel Finding</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-box input-output"></div>
+                    <span>Input/Output</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
